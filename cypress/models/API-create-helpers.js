@@ -1,35 +1,44 @@
 import { UserRegistrationForm } from "../pageObject/userAccount";
 const userRegistrationForm = new UserRegistrationForm();
 export let token;
+export let userId;
+export let userTypeId;
+
 function registerNewUser() {
     cy.request({
-        url: Cypress.env('baseURL').apiRegistration,
+        url: "https://bookcart.azurewebsites.net/api/User",
         method: "POST",
         body: {
                 "firstName": "Test1",
                 "lastName": "Test2",
-                "username": Cypress.env('requestBody').username,
-                "password": Cypress.env('requestBody').password,
+                "username": "test17",
+                "password": "123456",
                 "gender": "Female"
               }
         }).then((response) => {
-            cy.log(response.status);
+            cy.log(response);
+            
         });
 }
 function loginWithRegisteredUser() {
     cy.request({
-        url: Cypress.env('baseURL').apiLogin,
+        url: "https://bookcart.azurewebsites.net/api/Login",
         method: "POST",
         body: {
-            "username": Cypress.env('requestBody').username,
-            "password": Cypress.env('requestBody').password
+            "username": "test17",
+            "password": "123456",
         }
     }).then((response) => {
         token = response.body.token;
+        cy.log('token', token);
+        userId = response.body.userDetails.userId;
+        cy.log('userId', userId);
+        userTypeId = response.body.userDetails.userTypeId;
+        cy.log(userTypeId);
     })
 }
 function verifyLoggedInUserIsCorrect(accountTitle) {
     userRegistrationForm.getLoggedInUserAccount()
-    .should('contain', accountTitle);
+    .contains(accountTitle);
 }
 export { registerNewUser, loginWithRegisteredUser, verifyLoggedInUserIsCorrect };

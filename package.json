@@ -4,11 +4,21 @@
   "description": "test project for API tests",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open:bookCart": "npx cypress open --env environmentName=bookCart",
+    "cy:run:bookCart": "npx cypress run --env environmentName=bookCart",
+    "cy:bookCart.setting": "cypress open --env environmentName=bookCart",
+    "cy:open:petStore": "npx cypress open --env environmentName=petStore",
+    "cy:run:petStore": "npx cypress run --env environmentName=petStore",
+    "cy:run": "npx cypress open"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.6.0"
+    "cypress-plugin-api": "^2.11.1"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.1",
+    "mochawesome": "^7.1.3"
   }
 }
