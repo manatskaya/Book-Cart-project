@@ -17,7 +17,6 @@ function registerNewUser() {
               }
         }).then((response) => {
             cy.log(response);
-            
         });
 }
 function loginWithRegisteredUser() {
