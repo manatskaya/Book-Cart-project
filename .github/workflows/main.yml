@@ -19,6 +19,9 @@ jobs:
     - name: Generate mochawesome reports
       run: npm run generate:report
       if: failure()||success()
+    - name: Delete merged reports
+      run: npm run delete:merged
+      if: failure()||success()
     - name: Save report
       uses: actions/upload-artifact@v3
       with:
