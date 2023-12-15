@@ -14,7 +14,6 @@ jobs:
     steps:
     - name: Export env variables
       run: export CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}
-    - name: 
     - name: Get repository code
       uses: actions/checkout@v4
     - name: Install dependencies
