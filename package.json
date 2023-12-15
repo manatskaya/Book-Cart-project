@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open:bookCart": "npx cypress open --env environmentName=bookCart --browser chrome",
-    "cy:run:bookCart": "npx cypress run --env environmentName=bookCart && npm run generate:report && npm run delete:merged",
+    "cy:run:bookCart": "npx cypress run --env environmentName=bookCart",
     "cy:bookCart.setting": "npx cypress open --env environmentName=bookCart",
     "cy:open:petStore": "npx cypress open --env environmentName=petStore",
     "cy:run:petStore": "npx cypress run --env environmentName=petStore",

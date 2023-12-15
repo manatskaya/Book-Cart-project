@@ -14,13 +14,12 @@ jobs:
       uses: actions/checkout@v4
     - name: Install dependencies
       run: npm ci
+    - name: Remove previously created reports
+      run: npm run prereport
     - name: Run the tests
       run: npm run cy:run:bookCart
     - name: Generate mochawesome reports
       run: npm run generate:report
-      if: failure()||success()
-    - name: Delete merged reports
-      run: npm run delete:merged
       if: failure()||success()
     - name: Save report
       uses: actions/upload-artifact@v3
