@@ -1,11 +1,8 @@
-{"env": {
-    "baseURL": {
-    "ui": "https://petstore.swagger.io/v2"
-  },
+{
+  "baseUrl": "https://petstore.swagger.io/v2",
   "specPattern":"cypress/e2e/petStore/*.cy.js",
   "requestBody": {
     "username": "test17",
     "password": "123456"
   }
-}
 }

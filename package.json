@@ -6,16 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open:bookCart": "npx cypress open --env environmentName=bookCart --browser chrome",
-    "cy:run:bookCart": "npm run generate:report && npx cypress run --env environmentName=bookCart --browser chrome",
-    "cy:bookCart.setting": "cypress open --env environmentName=bookCart",
+    "cy:run:bookCart": "npx cypress run --env environmentName=bookCart && npm run generate:report && npm run delete:merged",
+    "cy:bookCart.setting": "npx cypress open --env environmentName=bookCart",
     "cy:open:petStore": "npx cypress open --env environmentName=petStore",
     "cy:run:petStore": "npx cypress run --env environmentName=petStore",
     "cy:run": "npx cypress run",
     "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
-    "delete:reports": "rimraf cypress/results/* || true",
     "delete:merged": "rimraf mochawesome.json || true",
-    "delete:html": "rimraf mochawesome-report || true",
-    "prereport": "npm run delete:reports ; npm run delete:merged && npm run delete:html"
+    "delete:reports": "rimraf cypress/results/* || true"
   },
   "author": "",
   "license": "ISC",

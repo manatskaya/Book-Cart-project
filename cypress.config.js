@@ -6,7 +6,7 @@ module.exports = defineConfig({
     pageLoadTimeout:30000,
     reporter: 'mochawesome',
     reporterOptions: {
-        reportDir: 'cypress/results',
+        reportDir: 'cypres/results',
         overwrite: false,
         html: false,
         json: true,
