@@ -7,10 +7,11 @@ module.exports = defineConfig({
     reporter: 'mochawesome',
     reporterOptions: {
         reportDir: './cypress/results',
-        overwrite: false,
+        overwrite: true,
         html: false,
         json: true,
     },
+    projectId: "wov1uq",
     setupNodeEvents(on, config) {
       const environmentName = config.env.environmentName || 'bookCart'
       const environmentFilename = `./${environmentName}.settings.json`
