@@ -24,10 +24,10 @@ jobs:
       with:
         path: mochawesome-report
         name: Test report
-        if: failure()||success()
+      if: failure()||success()
     - name: Download report
       uses: actions/download-artifact@v3
       with:
         name: Test report
-        if: failure()||success()
+      if: failure()||success()
 
