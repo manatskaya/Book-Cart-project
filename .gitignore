@@ -133,3 +133,5 @@ node_modules/
 cypress/results/
 cypress/results/assets/
 results/
+mochawesome-report/
+mochawesome-report/assets/

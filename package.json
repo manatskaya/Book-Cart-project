@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:open:bookCart": "npx cypress open --env environmentName=bookCart",
-    "cy:run:bookCart": "npm run generate:report && npx cypress run --env environmentName=bookCart",
+    "cy:open:bookCart": "npx cypress open --env environmentName=bookCart --browser chrome",
+    "cy:run:bookCart": "npm run generate:report && npx cypress run --env environmentName=bookCart --browser chrome",
     "cy:bookCart.setting": "cypress open --env environmentName=bookCart",
     "cy:open:petStore": "npx cypress open --env environmentName=petStore",
     "cy:run:petStore": "npx cypress run --env environmentName=petStore",
-    "cy:run": "npx cypress open",
+    "cy:run": "npx cypress run",
     "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
     "delete:reports": "rimraf cypress/results/* || true",
     "delete:merged": "rimraf mochawesome.json || true",
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "cypress": "^13.6.1",
+    "mocha": "^10.2.0",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
     "mochawesome-report-generator": "^6.2.0"
