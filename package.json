@@ -13,7 +13,9 @@
     "cy:run": "npx cypress run",
     "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
     "delete:merged": "rimraf mochawesome.json || true",
-    "delete:reports": "rimraf cypress/results/* || true"
+    "delete:reports": "rimraf cypress/results/* || true",
+    "delete:html": "rimraf mochawesome-report || true",
+    "prereport": "npm run delete:reports; npm run delete:merged && npm run delete:html"
   },
   "author": "",
   "license": "ISC",

@@ -15,7 +15,6 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Remove previously created reports
-      run: npm run prereport
     - name: Run the tests
       run: npm run cy:run:bookCart
     - name: Generate mochawesome reports
